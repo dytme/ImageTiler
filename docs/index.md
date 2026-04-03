@@ -1,9 +1,7 @@
-# Processing Library Template
+# ImageTiler
 
-The Processing Library Template is a template to help developers of Processing libraries to develop and release.
-It can be found on Github at [https://github.com/processing/processing-library-template](https://github.com/processing/processing-library-template).
-
-![example sketch output](./example_sketch_output.png)
+ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
+![example sketch output](./example_textures.gif)
 
 This documentation provides information on
 
