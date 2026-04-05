@@ -4,7 +4,7 @@ ImageTiler is a Processing library for creating seamless textures or tiled image
 
 <p align="center">
   <a href="https://dytme.github.io/ImageTiler/index.html">
-    <img src="docs/docs-button.png" width="663" alt="View Documentation">
+    <img src="docs/docs-button.png" width="200" alt="View Documentation">
   </a>
 </p>
 
