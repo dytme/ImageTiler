@@ -8,26 +8,29 @@
       
       
       
-        <link rel="canonical" href="https://processing.github.io/processing-library-template/index.html">
+        <link rel="canonical" href="https://dytme.github.io/ImageTiler/index.html">
       
       
       
-        <link rel="next" href="getting-started.html">
+        <link rel="next" href="tilingmodes.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="image_tiler_logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Processing Library Template</title>
+        <title>ImageTiler</title>
       
     
     
       <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -57,7 +60,12 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="blue-grey">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -66,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#imagetiler" class="md-skip">
+        <a href="#getting-started" class="md-skip">
           Skip to content
         </a>
       
@@ -82,10 +90,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Processing Library Template" class="md-header__button md-logo" aria-label="Processing Library Template" data-md-component="logo">
+    <a href="index.html" title="ImageTiler" class="md-header__button md-logo" aria-label="ImageTiler" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="image_tiler_logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -96,21 +103,21 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Processing Library Template
+            ImageTiler
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Getting Started
             
           </span>
         </div>
       </div>
     </div>
     
+      
     
-      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -187,13 +194,12 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Processing Library Template" class="md-nav__button md-logo" aria-label="Processing Library Template" data-md-component="logo">
+    <a href="index.html" title="ImageTiler" class="md-nav__button md-logo" aria-label="ImageTiler" data-md-component="logo">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+  <img src="image_tiler_logo.svg" alt="logo">
 
     </a>
-    Processing Library Template
+    ImageTiler
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -221,7 +227,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Getting Started
   
 
     
@@ -239,7 +245,7 @@
   <span class="md-ellipsis">
     
   
-    Home
+    Getting Started
   
 
     
@@ -265,10 +271,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        Installation
       
     </span>
   </a>
@@ -276,10 +282,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
+  <a href="#creating-a-tiled-texture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contributors
+        Creating a Tiled Texture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-the-tiled-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing the Tiled Texture
       
     </span>
   </a>
@@ -301,14 +318,14 @@
   
   
     <li class="md-nav__item">
-      <a href="getting-started.html" class="md-nav__link">
+      <a href="tilingmodes.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Get Started
+    Tiling Modes
   
 
     
@@ -328,14 +345,14 @@
   
   
     <li class="md-nav__item">
-      <a href="develop.html" class="md-nav__link">
+      <a href="api.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Develop
+    Reference
   
 
     
@@ -355,41 +372,14 @@
   
   
     <li class="md-nav__item">
-      <a href="release.html" class="md-nav__link">
+      <a href="examples.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Release
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="troubleshooting.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
+    Example Sketches
   
 
     
@@ -429,10 +419,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        Installation
       
     </span>
   </a>
@@ -440,10 +430,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
+  <a href="#creating-a-tiled-texture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contributors
+        Creating a Tiled Texture
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-the-tiled-texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drawing the Tiled Texture
       
     </span>
   </a>
@@ -467,41 +468,32 @@
 
 
 
-<h1 id="imagetiler">ImageTiler</h1>
-<p>ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
-<img alt="example sketch output" src="./example_textures.gif" /></p>
-<p>This documentation provides information on</p>
-<ol>
-<li><a href="getting-started.html">Getting started</a></li>
-<li><a href="develop">The development process</a></li>
-<li><a href="release">Releasing your library</a></li>
-<li><a href="troubleshooting.html">Troubleshooting</a></li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This template is based on Gradle. If you are looking for the old Ant-based template, see processing/processing-library-template-ant</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.</p>
+<p><img alt="all 5 tiling modes gif" src="example_textures.gif" /></p>
+<h2 id="installation">Installation</h2>
+<p>ImageTiler can be installed directly from the Processing Contribution Manager (pending approval), like any other library. After installing it with the contribution manager, you can import the library by adding the following snippet of code at the beginning of your sketch.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">dytme.github.ImageTiler.*</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="creating-a-tiled-texture">Creating a Tiled Texture</h2>
+<p>ImageTiler adds a new class to Processing, <code>TiledImage</code>, which acts in a similar fashion to the <code>PImage</code> class already included in all sketches. When you want to create a TiledImage, you have to first define it somewhere in your sketch. In our example, we will use the ice texture shown above.</p>
+<div class="highlight"><pre><span></span><code><span class="n">TiledImage</span><span class="w"> </span><span class="n">texture</span><span class="p">;</span>
+</code></pre></div>
+<p>Afterwards, you can create a TiledImage by using one of the available constructors, depending on your requirements. You can find out more about this on the <a href="tilingmodes.html">Tiling Modes</a> page. The most basic implementation would utilize the <code>Actual Size</code> mode:</p>
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">source_image</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="mi">200</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Keep in mind that the object source_image must be of type PImage!</p>
 </div>
-<h2 id="references">References</h2>
-<p>Existing references for developing libraries for Processing can be found on the following Github wiki pages:</p>
-<ul>
-<li><a href="https://github.com/benfry/processing4/wiki/Library-Basics">https://github.com/processing/processing4/wiki/Library-Basics</a></li>
-<li><a href="https://github.com/benfry/processing4/wiki/Library-Guidelines">https://github.com/processing/processing4/wiki/Library-Guidelines</a></li>
-<li><a href="https://github.com/benfry/processing4/wiki/Library-Overview">https://github.com/processing/processing4/wiki/Library-Overview</a></li>
-</ul>
-<h2 id="contributors">Contributors</h2>
-<p>This template was created as part of the 2024 New Beginnings (pr05) Grant from the
-<a href="https://github.com/processing">Processing Foundation</a>, to simplify the
-workflows for libraries, tools, and modes, mentored by <a href="https://github.com/stefterv">@Stefterv</a>.</p>
-<p>It is based on and inspired by a number of Processing library templates, including:</p>
-<ul>
-<li><a href="https://github.com/processing/processing-library-template-gradle">https://github.com/processing/processing-library-template-gradle</a></li>
-<li><a href="https://github.com/enkatsu/processing-library-template-gradle">https://github.com/enkatsu/processing-library-template-gradle</a></li>
-<li><a href="https://github.com/hamoid/processing-library-template/">https://github.com/hamoid/processing-library-template/</a></li>
-</ul>
-<p>I wish to thank the developers of these repositories, who generously provided
-guidance and time. This template has been developed in collaboration with
-<a href="https://github.com/enkatsu">@enkatsu</a>.</p>
-<p>The example library was developed by Stig Møller Hansen (<a href="https://github.com/stixan">@stixan</a>).</p>
+<h2 id="drawing-the-tiled-texture">Drawing the Tiled Texture</h2>
+<p>Whenever you want to draw/render the tiled texture, you can do so by simply calling the <code>.render()</code> method upon the previously created object.</p>
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="p">.</span><span class="na">render</span><span class="p">();</span>
+</code></pre></div>
+<p align="center">
+    <img src="./example1_result.png" width="200">
+</p>
+
+<p>This can be done at any point in the draw loop or related methods, similarly to the <code>image()</code> method of a <code>PImage</code> object.</p>
 
 
 
@@ -538,13 +530,13 @@ guidance and time. This template has been developed in collaboration with
         
         
           
-          <a href="getting-started.html" class="md-footer__link md-footer__link--next" aria-label="Next: Get Started">
+          <a href="tilingmodes.html" class="md-footer__link md-footer__link--next" aria-label="Next: Tiling Modes">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Get Started
+                Tiling Modes
               </div>
             </div>
             <div class="md-footer__button md-icon">

@@ -1,0 +1,787 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://dytme.github.io/ImageTiler/api.html">
+      
+      
+        <link rel="prev" href="tilingmodes.html">
+      
+      
+        <link rel="next" href="examples.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="image_tiler_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Reference - ImageTiler</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="https://unpkg.com/iframe-worker/shim"></script>
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="blue-grey">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="ImageTiler" class="md-header__button md-logo" aria-label="ImageTiler" data-md-component="logo">
+      
+  <img src="image_tiler_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ImageTiler
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="ImageTiler" class="md-nav__button md-logo" aria-label="ImageTiler" data-md-component="logo">
+      
+  <img src="image_tiler_logo.svg" alt="logo">
+
+    </a>
+    ImageTiler
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tilingmodes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tiling Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="api.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-tiledimage-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a TiledImage Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a TiledImage Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#universal-constructor-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Universal Constructor Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-setup-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Setup Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-different-tiling-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Different Tiling Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applying Different Tiling Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual-size-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Size Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-size-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Size Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-count-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Count Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-a-tiledimage-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving a TiledImage Object
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Sketches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-tiledimage-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a TiledImage Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Creating a TiledImage Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#universal-constructor-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Universal Constructor Parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-setup-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Setup Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applying-different-tiling-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Applying Different Tiling Modes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Applying Different Tiling Modes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actual-size-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Actual Size Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fixed-size-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed Size Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-count-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image Count Constructor
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-a-tiledimage-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving a TiledImage Object
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="reference">Reference</h1>
+<p>TiledImage objects are mostly static, meaning that once created, the <code>Size</code>, <code>Source Image</code>, <code>TilingMode</code> and parameters for the tiling procedure cannot be changed. However, the position of a TiledImage Object <em>can</em> be changed.</p>
+<hr />
+<h2 id="creating-a-tiledimage-object">Creating a TiledImage Object</h2>
+<p>It's recommended to only create a TiledImage object once, in the <code>setup()</code> part of your Sketch. This is to avoid performance and memory issues related to recalculating the same <code>PGraphic</code> element over and over again. Part of why this library is so efficient at what it does is because it computes the TiledImage object once, with the <code>.render()</code> method taking very few resources to execute.</p>
+<h3 id="universal-constructor-parameters">Universal Constructor Parameters</h3>
+<p>The first 6 parameters of any TilingMode are identical to one another, as they represent universal fields that are needed irrespective of the chosen tiling mode.
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="n">PApplet</span><span class="p">,</span><span class="w"> </span><span class="n">source_image</span><span class="p">,</span><span class="w"> </span><span class="n">xPos</span><span class="p">,</span><span class="w"> </span><span class="n">yPos</span><span class="p">,</span><span class="w"> </span><span class="n">xSize</span><span class="p">,</span><span class="w"> </span><span class="n">ySize</span><span class="p">)</span>
+</code></pre></div></p>
+<dl>
+<dt><strong>parent</strong> (PApplet)</dt>
+<dd>Refers to the window/instance of your sketch. If you don't really know what this means, you can safely use <code>this</code>.</dd>
+<dt><strong>source_image</strong> (PImage)</dt>
+<dd>A <code>PImage</code> object which will be used as the source image for your TiledImage object. This has to be loaded/handled separately. <em>Do not provide a filepath</em></dd>
+<dt><strong>xPos, yPos</strong> (float)</dt>
+<dd>Coordinates for the (by default) top-left corner of your TiledImage object. Keep in mind that these coordinates are impacted by <a href="https://processing.org/reference/shapeMode_.html">shapeMode()</a></dd>
+<dt><strong>xSize, ySize</strong> (float)</dt>
+<dd>The dimensions of your TiledImage object. <em>Keep in mind that these do not represent the coordinates for a the bottom-right corner, but rather the size of the object itself.</em> If you want to use coordinates, you can add <code>xPos</code> and <code>yPos</code> to <code>xSize</code> and <code>ySize</code> respectively.</dd>
+</dl>
+<h3 id="example-setup-code">Example Setup Code</h3>
+<details class="example">
+<summary>Example Setup Code</summary>
+<div class="highlight"><pre><span></span><code><span class="n">TiledImage</span><span class="w"> </span><span class="n">texture</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PImage</span><span class="w"> </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">loadImage</span><span class="p">(</span><span class="s">&quot;file_path_here&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">image</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w"> </span><span class="mi">300</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">texture</span><span class="p">.</span><span class="na">render</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="applying-different-tiling-modes">Applying Different Tiling Modes</h2>
+<p>TilingModes are selected depending on the constructor parameters that you provide. Either they will utilize a completely separate constructor (Fixed Size vs Image Count), or a specific field will pick a specific submode (like in the case of ImageCount)</p>
+<h3 id="actual-size-constructor">Actual Size Constructor</h3>
+<p>This is the default mode, where the original resolution of <code>source_image</code> will be utilized. This mode requires no extra parameters.</p>
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="n">PApplet</span><span class="p">,</span><span class="w"> </span><span class="n">source_image</span><span class="p">,</span><span class="w"> </span><span class="n">xPos</span><span class="p">,</span><span class="w"> </span><span class="n">yPos</span><span class="p">,</span><span class="w"> </span><span class="n">xSize</span><span class="p">,</span><span class="w"> </span><span class="n">ySize</span><span class="p">)</span>
+</code></pre></div>
+<p>For an example, <a href="tilingmodes.html#actual-size-default">See Actual Size Mode</a></p>
+<h3 id="fixed-size-constructor">Fixed Size Constructor</h3>
+<p>This mode allows you to force the library to resize <code>source_image</code> to a specific resolution before tiling it.</p>
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="n">PApplet</span><span class="p">,</span><span class="w"> </span><span class="n">source_image</span><span class="p">,</span><span class="w"> </span><span class="n">xPos</span><span class="p">,</span><span class="w"> </span><span class="n">yPos</span><span class="p">,</span><span class="w"> </span><span class="n">xSize</span><span class="p">,</span><span class="w"> </span><span class="n">ySize</span><span class="p">,</span><span class="w"> </span><span class="n">xImgSize</span><span class="p">,</span><span class="w"> </span><span class="n">yImgSize</span><span class="p">)</span>
+</code></pre></div>
+<dl>
+<dt><strong>xImgSize, yImgSize</strong> (float)</dt>
+<dd>The new resolution of your <code>PImage source_image</code>. Keep in mind that this mode does not account for aspect ratio, so you can freely resize/distort the source image.</dd>
+</dl>
+<p>For an example, <a href="tilingmodes.html#fixed-size">See Fixed Size Mode</a></p>
+<h3 id="image-count-constructor">Image Count Constructor</h3>
+<p>This mode allows you to force the library to resize <code>source_image</code> to a specific resolution before tiling it.</p>
+<div class="highlight"><pre><span></span><code><span class="n">texture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TiledImage</span><span class="p">(</span><span class="n">PApplet</span><span class="p">,</span><span class="w"> </span><span class="n">source_image</span><span class="p">,</span><span class="w"> </span><span class="n">xPos</span><span class="p">,</span><span class="w"> </span><span class="n">yPos</span><span class="p">,</span><span class="w"> </span><span class="n">xSize</span><span class="p">,</span><span class="w"> </span><span class="n">ySize</span><span class="p">,</span><span class="w"> </span><span class="n">axisConstraint</span><span class="p">,</span><span class="w"> </span><span class="n">xImgCount</span><span class="p">,</span><span class="w"> </span><span class="n">yImgCount</span><span class="p">)</span>
+</code></pre></div>
+<dl>
+<dt><strong>axisConstraint</strong> (String)</dt>
+<dd>Which axis (if any) will be prioritised in order to maintain aspect ratio. Use either <code>"x"</code> or <code>"y"</code>. If none is provided, then <code>source_image</code> will be freely distorted to ensure that the image count is satisfied on both axis.</dd>
+<dt><strong>xImgCount, yImgCount</strong> (float)</dt>
+<dd>How many times should the image be tiled on the X and Y axis respectively. </dd>
+</dl>
+<p>For an example, <a href="tilingmodes.html#image-count-non-constrained">See Image Count Mode</a></p>
+<hr />
+<h2 id="moving-a-tiledimage-object">Moving a TiledImage Object</h2>
+<p>The <code>xPos</code> and <code>yPos</code> parameters of a TiledImage object are public, meaning that you can change them directly. No getter/setter is provided, as changing the position does nothing but change the coordinates at which the <code>PGraphic</code> element is rendered. This can be done at any point in the execution of your program <em>after the TiledImage Object was constructed.</em></p>
+<details class="example">
+<summary>Example Getter/Setter Procedure</summary>
+<div class="highlight"><pre><span></span><code><span class="c1">// Valid Getter Procedure</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">texture</span><span class="p">.</span><span class="na">xPos</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+
+<span class="c1">// Valid Setter Procedure</span>
+<span class="n">texture</span><span class="p">.</span><span class="na">yPos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">200</span><span class="p">;</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="tilingmodes.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tiling Modes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Tiling Modes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="examples.html" class="md-footer__link md-footer__link--next" aria-label="Next: Example Sketches">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Example Sketches
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      MIT Licence.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.select", "content.code.highlight", "content.code.annotate", "navigation.top", "navigation.footer"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
