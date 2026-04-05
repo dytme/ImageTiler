@@ -13,7 +13,9 @@ ImageTiler is a Processing library for creating seamless textures or tiled image
 
 ### Download
 
-[Download ImageTiler v1.0.0](todo)
+You may (soon) find this library in the official Processing Contribution Manager.
+
+Alternatively, you can [Download Release v1.0.0 from GitHub](https://github.com/dytme/ImageTiler/releases/tag/v1.0.0)
 
 ### Keywords
 
