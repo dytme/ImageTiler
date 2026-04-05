@@ -1,5 +1,8 @@
 site_name: ImageTiler
 site_url: "https://dytme.github.io/ImageTiler/"
+repo_name: dytme/ImageTiler
+repo_url: https://github.com/dytme/ImageTiler
+edit_uri: edit/main/docs/
 
 theme:
   name: material

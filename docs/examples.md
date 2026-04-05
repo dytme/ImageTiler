@@ -16,10 +16,11 @@ To cycle between TilingModes, simply click anywhere in the Sketch. If you want t
 ### Description
 
 This Example Sketch is meant to showcase the abilities of this library on a larger-scale project. Most of the images in this project are `TiledImage` objects instead of PImage ones. You can also see different use cases for the library:
-* Seamless repeated textures, such as the Bricks or Wooden Panels
-* Infinitely scaling a texture on one axis, such as the Garland, Gradients or Pillar Tiles
-* Adding 2/3 repeated PImage objects one next to the other, such as the Second Floor Windows
-* Relative Positioning between `TiledImage` objects, as `xPos, yPos, xSize and ySize` are all public fields.
+
+- Seamless repeated textures, such as the Bricks or Wooden Panels
+- Infinitely scaling a texture on one axis, such as the Garland, Gradients or Pillar Tiles
+- Adding 2/3 repeated PImage objects one next to the other, such as the Second Floor Windows
+- Relative Positioning between `TiledImage` objects, as `xPos, yPos, xSize and ySize` are all public fields.
 
 ![Intertoys Storefront Showcase](./storefront.png)
 
