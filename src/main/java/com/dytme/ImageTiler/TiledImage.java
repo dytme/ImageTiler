@@ -22,7 +22,8 @@ public class TiledImage {
 
     // Fields that determine the boundaries of the tiled image
     // These are public to allow other objects to reference their positioning when placing themselves. Although it's
-    public final float xPos, xSize, yPos, ySize;
+    public float xPos, yPos;
+    public final float xSize, ySize;
 
     // Fields that determine the size of a single image (Depends on mode)
     float xImgSize, yImgSize; // (0 = Default)
