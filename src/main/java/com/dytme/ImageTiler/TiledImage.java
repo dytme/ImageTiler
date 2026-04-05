@@ -6,7 +6,10 @@ import processing.core.PImage;
 
 import java.util.Objects;
 
-@SuppressWarnings("unused")
+/**
+ * Main object class which allows the creation of seamless textures.
+ * Behaves similarly to PImage or SoundFile, as in its an object that needs to be defined, created, and then referenced through .render()
+ */
 public class TiledImage {
 
     PApplet applet;
@@ -22,7 +25,17 @@ public class TiledImage {
 
     // Fields that determine the boundaries of the tiled image
     // These are public to allow other objects to reference their positioning when placing themselves. Although it's
+    /**
+     * Coordinates for the (by default) top-left corner of your TiledImage object.
+     * Keep in mind that these coordinates are impacted by shapeMode()
+     */
     public float xPos, yPos;
+
+    /**
+     * The dimensions of your TiledImage object.
+     * Keep in mind that these do not represent the coordinates for a the bottom-right corner, but rather the size of the object itself.
+     * If you want to use coordinates, you can add xPos and yPos to xSize and ySize respectively.
+     */
     public final float xSize, ySize;
 
     // Fields that determine the size of a single image (Depends on mode)
@@ -42,6 +55,17 @@ public class TiledImage {
 
     // Forced Size (Default)
 
+    /**
+     *
+     * @param instance PApplet (this)
+     * @param img PImage object to use as a source image
+     * @param xPos X position of the object
+     * @param yPos Y position of the object
+     * @param xSize X size of the object
+     * @param ySize Y size of the object
+     * @param xImgSize Custom X size for the source image
+     * @param yImgSize Custom Y size for the source image
+     */
     public TiledImage(PApplet instance, PImage img, float xPos, float yPos, float xSize, float ySize, float xImgSize, float yImgSize) {
         this.applet = instance;
 
@@ -71,6 +95,15 @@ public class TiledImage {
 
     // Actual Size
 
+    /**
+     * This is the default constructor, that uses the original resolution of source_image. This mode requires no extra parameters.
+     * @param instance PApplet (this)
+     * @param img PImage object to use as a source image
+     * @param xPos X position of the object
+     * @param yPos Y position of the object
+     * @param xSize X size of the object
+     * @param ySize Y size of the object
+     */
     public TiledImage(PApplet instance, PImage img, float xPos, float yPos, float xSize, float ySize) {
         // Extracts the image size by itself and constructs a forced size tiled image.
         this(instance, img, xPos, yPos, xSize, ySize, img.width, img.height);
@@ -79,6 +112,18 @@ public class TiledImage {
 
     // Image Count
 
+    /**
+     * This constructor allows you to force the library to resize source_image to a specific resolution before tiling it.
+     * @param instance PApplet (this)
+     * @param img PImage object to use as a source image
+     * @param xPos X position of the object
+     * @param yPos Y position of the object
+     * @param xSize X size of the object
+     * @param ySize Y size of the object
+     * @param constraintAxis Which axis (if any) will be prioritized in order to maintain aspect ratio. Use either "x" or "y". If none is provided, then source_image will be freely distorted to ensure that the image count is satisfied on both axis.
+     * @param xImgCount How many times to tile on the X axis
+     * @param yImgCount How many times to tile on the Y axis
+     */
     public TiledImage(PApplet instance, PImage img, float xPos, float yPos, float xSize, float ySize, String constraintAxis, int xImgCount, int yImgCount) {
         this.applet = instance;
 
@@ -143,7 +188,10 @@ public class TiledImage {
 
     }
 
-
+    /**
+     * Draws the tiled image to the screen.
+     * Call this in your draw() loop.
+     */
     public void render() {
 
         // If there is a tiledImage defined already, render it.
