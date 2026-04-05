@@ -1,8 +1,6 @@
-# Getting Started
+![Header](docs/header.png)
 
 ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
-
-![all 5 tiling modes gif](./example_textures.gif)
 
 ## Installation
 
@@ -21,7 +19,7 @@ TiledImage texture;
 ```
 
 
-Afterwards, you can create a TiledImage by using one of the available constructors, depending on your requirements. You can find out more about this on the [Tiling Modes](tilingmodes.md) page. The most basic implementation would utilize the `Actual Size` mode:
+Afterwards, you can create a TiledImage by using one of the available constructors, depending on your requirements. You can find out more about this on the Tiling Modes page of the documentation. The most basic implementation would utilize the `Actual Size` mode:
 
 ```java
 texture = new TiledImage(this, source_image, 0, 0, 200, 200);
@@ -37,7 +35,7 @@ Whenever you want to draw/render the tiled texture, you can do so by simply call
 texture.render();
 ```
 <p align="center">
-    <img src="./example1_result.png" width="200">
+    <img src="docs/example1_result.png" width="200">
 </p>
 
 This can be done at any point in the draw loop or related methods, similarly to the `image()` method of a `PImage` object.
