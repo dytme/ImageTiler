@@ -1,5 +1,3 @@
-# Getting Started
-
 ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
 
 ![all 5 tiling modes gif](./example_textures.gif)
