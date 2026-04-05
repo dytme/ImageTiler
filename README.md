@@ -14,6 +14,13 @@ ImageTiler is a Processing library for creating seamless textures or tiled image
 
 *Example of a scene rendered using TiledImage. The library was used for everything from the brick walls and shadows to garlands*
 
+### Compatibility
+
+- **Tested on:** Windows 11
+- **Processing version:** 4.4.10
+- **Dependencies:** None
+- **Last updated:** April 5, 2026
+
 ## Installation
 
 ImageTiler can be installed directly from the Processing Contribution Manager (pending approval), like any other library. After installing it with the contribution manager, you can import the library by adding the following snippet of code at the beginning of your sketch.
