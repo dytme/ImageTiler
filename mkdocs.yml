@@ -1,8 +1,18 @@
-site_name: Processing Library Template
-site_url: "https://processing.github.io/processing-library-template/"
+site_name: ImageTiler
+site_url: "https://dytme.github.io/ImageTiler/"
 
 theme:
   name: material
+  logo: image_tiler_logo.svg
+  favicon: image_tiler_logo.svg
+  palette:
+    # Primary is the header and sidebar background
+    primary: light blue
+    # Accent is for links, buttons, and hover states
+    accent: blue grey
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - search.suggest
     - search.highlight
@@ -18,6 +28,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - def_list
 
 copyright: MIT Licence.
 
@@ -26,8 +37,7 @@ plugins:
   - offline
 
 nav:
-  - Home: index.md
-  - Get Started: getting-started.md
-  - Develop: develop.md
-  - Release: release.md
-  - Troubleshooting: troubleshooting.md
+  - Getting Started: index.md
+  - Tiling Modes: tilingmodes.md
+  - Reference: api.md
+  - Example Sketches: examples.md
