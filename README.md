@@ -1,43 +1,43 @@
-# Processing Library Template
-This is a template to help developers of Processing libraries to develop and release.
+# Getting Started
 
-Please read the [documentation website](https://processing.github.io/processing-library-template/)
-for more information on how to use this template.
+ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
 
-Three important outputs are required to contribute a library to Processing, and this template provides 
-help and guidance on them. They are:
-1. **The library's code** - This template will build your code into a jar file with Gradle.
-2. **A website for the library** - We recommend using [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-   to create a static website for your library. It allows you to write content for your website
-   using markdown, and structure the site using a yml configuration file. We provide a skeleton
-   MkDocs website as part of this template.
-3. **A url that serves the release artifacts** - We have already configured Gradle tasks to create the
-   release artifacts. If you host your code on Github, You can create a Github release that serves the 
-   release artifacts.
+![all 5 tiling modes gif](./example_textures.gif)
 
+## Installation
 
-References for developing libraries for Processing can be found on the following Github wiki pages:
-- https://github.com/processing/processing4/wiki/Library-Basics
-- https://github.com/processing/processing4/wiki/Library-Guidelines
-- https://github.com/processing/processing4/wiki/Library-Overview
+ImageTiler can be installed directly from the Processing Contribution Manager (pending approval), like any other library. After installing it with the contribution manager, you can import the library by adding the following snippet of code at the beginning of your sketch.
 
-> [!Note]
-> This template is based on Gradle. If you are looking for the old Ant-based template, see [processing/processing-library-template-ant](https://github.com/processing/processing-library-template-ant)
+```java
+import dytme.github.ImageTiler.*;
+```
+
+## Creating a Tiled Texture
+
+ImageTiler adds a new class to Processing, `TiledImage`, which acts in a similar fashion to the `PImage` class already included in all sketches. When you want to create a TiledImage, you have to first define it somewhere in your sketch. In our example, we will use the ice texture shown above.
+
+```java
+TiledImage texture;
+```
 
 
-## Contributors
+Afterwards, you can create a TiledImage by using one of the available constructors, depending on your requirements. You can find out more about this on the [Tiling Modes](tilingmodes.md) page. The most basic implementation would utilize the `Actual Size` mode:
 
-This template was created by Claudine Chen ([@mingness](https://github.com/mingness)) as part of the 2024 New Beginnings (pr05) Grant from the 
-[Processing Foundation](https://github.com/processing), to simplify the
-workflows for libraries, tools, and modes, mentored by Stef Tervelde ([@Stefterv](https://github.com/stefterv)).
+```java
+texture = new TiledImage(this, source_image, 0, 0, 200, 200);
+```
 
-It is based on and inspired by a number of Processing library templates, including:
-- https://github.com/processing/processing-library-template-gradle
-- https://github.com/enkatsu/processing-library-template-gradle
-- https://github.com/hamoid/processing-library-template/
+!!! warning "Keep in mind that the object source_image must be of type PImage!"
 
-I wish to thank the developers of these repositories, who generously provided
-guidance and time. This template has been developed in collaboration with
-[@enkatsu](https://github.com/enkatsu).
+## Drawing the Tiled Texture
 
-The example library was developed by Stig Møller Hansen ([@stixan](https://github.com/stixan)).
+Whenever you want to draw/render the tiled texture, you can do so by simply calling the `.render()` method upon the previously created object.
+
+```java
+texture.render();
+```
+<p align="center">
+    <img src="./example1_result.png" width="200">
+</p>
+
+This can be done at any point in the draw loop or related methods, similarly to the `image()` method of a `PImage` object.
