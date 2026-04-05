@@ -1,6 +1,12 @@
-![Header](docs/header.png)
+![Header](docs/Header.png)
 
 ImageTiler is a Processing library for creating seamless textures or tiled image patterns. Repeat any image across a defined area using three modes: tile at original size, specify exact tile dimensions, or define how many tiles should fit with optional aspect ratio preservation.
+
+<p align="center">
+  <a href="https://dytme.github.io/ImageTiler/index.html">
+    <img src="docs/docs-button.png" width="663" alt="View Documentation">
+  </a>
+</p>
 
 ## Installation
 
